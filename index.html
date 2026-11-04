@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Performance Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel" aria-label="Todo app">
+        <header class="header">
+          <div>
+            <p class="eyebrow">Productivity</p>
+            <h1>Todo Performance Demo</h1>
+          </div>
+          <span id="task-count" class="badge" aria-live="polite">0 tasks</span>
+        </header>
+
+        <form id="todo-form" class="todo-form">
+          <label class="sr-only" for="todo-input">Add a todo</label>
+          <input
+            id="todo-input"
+            name="todo"
+            type="text"
+            maxlength="120"
+            placeholder="Add a new task..."
+            autocomplete="off"
+          />
+          <button type="submit">Add</button>
+        </form>
+
+        <div class="toolbar" aria-label="Todo filters">
+          <button class="filter active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="active">Active</button>
+          <button class="filter" type="button" data-filter="completed">Completed</button>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <template id="todo-item-template">
+      <li class="todo-item">
+        <label class="todo-main">
+          <input class="todo-checkbox" type="checkbox" />
+          <span class="todo-text"></span>
+        </label>
+        <button class="delete-btn" type="button" aria-label="Delete task">Delete</button>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
